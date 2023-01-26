@@ -30,6 +30,7 @@ abstract class UmbraWidget extends StatelessWidget {
     super.key,
     this.blendMode = BlendMode.src,
     this.child,
+    this.decoration,
     this.errorBuilder,
     this.compilingBuilder,
   });
@@ -39,6 +40,9 @@ abstract class UmbraWidget extends StatelessWidget {
 
   /// The optional child widget to apply the shader mask to.
   final Widget? child;
+
+  /// The optional decoration if a child want to be decorated
+  final Decoration? decoration;
 
   /// A builder function that is called if an error occurs during shader
   /// compilation.
@@ -94,6 +98,7 @@ abstract class UmbraWidget extends StatelessWidget {
                 );
               },
               child: Container(
+                decoration: decoration,
                 color: Colors.transparent,
                 width: constraints.maxWidth,
                 height: constraints.maxHeight,

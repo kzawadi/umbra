@@ -13,6 +13,7 @@ class {{name.pascalCase()}} extends UmbraWidget {
     super.key,
     super.blendMode = BlendMode.src,
     super.child,
+    super.decoration,
     super.errorBuilder,
     super.compilingBuilder,{{#parameters}}
     required {{type}} {{name.camelCase()}},{{/parameters}}
